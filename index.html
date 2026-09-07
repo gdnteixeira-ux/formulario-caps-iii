@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAPS III - Ficha de Acolhimento Inicial</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <h1>cândidoferreira</h1>
+                <h2>Ficha de Acolhimento Inicial CAPS III</h2>
+            </div>
+        </header>
+
+        <form id="formulario-caps" class="form-container">
+            <!-- SEÇÃO 1: DADOS INICIAIS -->
+            <section class="form-section">
+                <h3>Dados do Acolhimento/Recolhimento</h3>
+                
+                <div class="form-group">
+                    <label for="data-acolhimento">Data do Acolhimento/Recolhimento:</label>
+                    <input type="date" id="data-acolhimento" name="data-acolhimento" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="tipo-atendimento">Tipo de Atendimento:</label>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="tipo-atendimento" value="acolhimento" required>
+                            #ACOLHIMENTO#
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="tipo-atendimento" value="reacolhimento">
+                            #REACOLHIMENTO#
+                        </label>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SEÇÃO 2: DADOS PESSOAIS -->
+            <section class="form-section">
+                <h3>Dados Pessoais</h3>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="nome-completo">Nome Completo:</label>
+                        <input type="text" id="nome-completo" name="nome-completo" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="cpf">CPF:</label>
+                        <input type="text" id="cpf" name="cpf" placeholder="000.000.000-00" maxlength="14">
+                    </div>
+                    <div class="form-group">
+                        <label for="data-nascimento">Data Nasc.:</label>
+                        <input type="date" id="data-nascimento" name="data-nascimento">
+                    </div>
+                    <div class="form-group">
+                        <label for="telefone">Telefone:</label>
+                        <input type="tel" id="telefone" name="telefone" placeholder="( ) __________">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="endereco">Endereço:</label>
+                    <input type="text" id="endereco" name="endereco">
+                </div>
+
+                <div class="form-group">
+                    <label for="situacao-profissional">Situação Profissional (Profissão, local, tempo no trabalho):</label>
+                    <input type="text" id="situacao-profissional" name="situacao-profissional">
+                </div>
+            </section>
+
+            <!-- SEÇÃO 3: BENEFÍCIO E REDE DE APOIO -->
+            <section class="form-section">
+                <h3>Benefício e Rede de Apoio</h3>
+                
+                <div class="form-group">
+                    <label>Benefício:</label>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="beneficio" value="nao">
+                            Não
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="beneficio" value="sim">
+                            Sim
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="nome-acompanhante">Nome do Acompanhante no Acolhimento/Vínculo:</label>
+                    <input type="text" id="nome-acompanhante" name="nome-acompanhante">
+                </div>
+
+                <div class="form-group">
+                    <label for="rede-apoio">Outras Redes de Apoio/Vínculo:</label>
+                    <input type="text" id="rede-apoio" name="rede-apoio">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="telefone-rede-1">Telefone Rede de Apoio:</label>
+                        <input type="tel" id="telefone-rede-1" name="telefone-rede-1" placeholder="( ) __________">
+                    </div>
+                    <div class="form-group">
+                        <label for="telefone-rede-2">Telefone Rede de Apoio:</label>
+                        <input type="tel" id="telefone-rede-2" name="telefone-rede-2" placeholder="( ) __________">
+                    </div>
+                </div>
+            </section>
+
+            <!-- SEÇÃO 4: HISTÓRICO DA DOENÇA -->
+            <section class="form-section">
+                <h3>Histórico Atual da Doença</h3>
+                <p class="info-text">Queixa inicial, motivo do atendimento, início do quadro, duração, características:</p>
+                
+                <div class="form-group">
+                    <textarea id="historico-doenca" name="historico-doenca" rows="5" placeholder="Descreva o histórico da doença..."></textarea>
+                </div>
+            </section>
+
+            <!-- SEÇÃO 5: TRATAMENTOS ANTERIORES -->
+            <section class="form-section">
+                <h3>Tratamentos Anteriores em Saúde Mental</h3>
+                
+                <div class="form-group">
+                    <textarea id="tratamentos-anteriores" name="tratamentos-anteriores" rows="4" placeholder="Descreva os tratamentos anteriores..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Internações Psiquiátricas Anteriores:</label>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="internacoes" value="nao">
+                            Não
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="internacoes" value="sim">
+                            Sim
+                        </label>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="qtd-internacoes">Quantas?</label>
+                            <input type="number" id="qtd-internacoes" name="qtd-internacoes" min="0">
+                        </div>
+                        <div class="form-group">
+                            <label for="data-ultima-internacao">Data da Última Internação:</label>
+                            <input type="date" id="data-ultima-internacao" name="data-ultima-internacao">
+                        </div>
+                        <div class="form-group">
+                            <label for="local-internacao">Onde?</label>
+                            <input type="text" id="local-internacao" name="local-internacao">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SEÇÃO 6: COMPORTAMENTO SUICIDA -->
+            <section class="form-section">
+                <h3>Histórico de Comportamento Suicida</h3>
+                <p class="info-text">Ideação, planejamento, tentativa:</p>
+                
+                <div class="form-group">
+                    <textarea id="comportamento-suicida" name="comportamento-suicida" rows="4" placeholder="Descreva o histórico..."></textarea>
+                </div>
+            </section>
+
+            <!-- SEÇÃO 7: SUBSTÂNCIAS E MEDICAMENTOS -->
+            <section class="form-section">
+                <h3>Substâncias e Medicamentos</h3>
+                
+                <div class="form-group">
+                    <label>Uso de SPA's:</label>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="uso-spa" value="nao">
+                            Não
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="uso-spa" value="sim">
+                            Sim
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="detalhes-spa" name="detalhes-spa" placeholder="Especifique as substâncias...">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Outros Problemas de Saúde:</label>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="outros-problemas" value="nao">
+                            Não
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="outros-problemas" value="sim">
+                            Sim
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="detalhes-problemas" name="detalhes-problemas" placeholder="Especifique...">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Alergias:</label>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="alergias" value="nao">
+                            Não
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="alergias" value="sim">
+                            Sim
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="detalhes-alergias" name="detalhes-alergias" placeholder="Especifique as alergias...">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="farmacos">Fármacos em Uso:</label>
+                    <textarea id="farmacos" name="farmacos" rows="3" placeholder="Liste os medicamentos em uso..."></textarea>
+                </div>
+            </section>
+
+            <!-- SEÇÃO 8: EXAME PSÍQUICO -->
+            <section class="form-section">
+                <h3>Exame Psíquico</h3>
+                <p class="info-text">Registre no campo "Objetivo"</p>
+
+                <div class="form-group">
+                    <label for="aspecto-geral">Aspecto Geral (higiene, trajes autocuidado, ferimentos/lesões):</label>
+                    <input type="text" id="aspecto-geral" name="aspecto-geral">
+                </div>
+
+                <div class="form-group">
+                    <label for="postura-global">Postura Global (colaboração, desconfiança):</label>
+                    <input type="text" id="postura-global" name="postura-global">
+                </div>
+
+                <div class="form-group">
+                    <label for="consciencia">Consciência:</label>
+                    <input type="text" id="consciencia" name="consciencia">
+                </div>
+
+                <div class="form-group">
+                    <label for="orientacao">Orientação (tempo e espaço):</label>
+                    <input type="text" id="orientacao" name="orientacao">
+                </div>
+
+                <div class="form-group">
+                    <label for="atencao">Atenção:</label>
+                    <input type="text" id="atencao" name="atencao">
+                </div>
+
+                <div class="form-group">
+                    <label for="linguagem">Linguagem:</label>
+                    <input type="text" id="linguagem" name="linguagem">
+                </div>
+
+                <div class="form-group">
+                    <label for="pensamento">Pensamento (forma, velocidade, fluxo, conteúdo):</label>
+                    <input type="text" id="pensamento" name="pensamento">
+                </div>
+
+                <div class="form-group">
+                    <label for="memoria">Memória:</label>
+                    <input type="text" id="memoria" name="memoria">
+                </div>
+
+                <div class="form-group">
+                    <label for="inteligencia">Inteligência:</label>
+                    <input type="text" id="inteligencia" name="inteligencia">
+                </div>
+
+                <div class="form-group">
+                    <label for="afeto-humor">Afeto e Humor:</label>
+                    <input type="text" id="afeto-humor" name="afeto-humor">
+                </div>
+
+                <div class="form-group">
+                    <label for="volição">Volição:</label>
+                    <input type="text" id="volição" name="volição">
+                </div>
+
+                <div class="form-group">
+                    <label for="sensopercepção">Sensopercepção:</label>
+                    <input type="text" id="sensopercepção" name="sensopercepção">
+                </div>
+
+                <div class="form-group">
+                    <label for="juizo-realidade">Juízo de Realidade:</label>
+                    <input type="text" id="juizo-realidade" name="juizo-realidade">
+                </div>
+            </section>
+
+            <!-- SEÇÃO 9: AVALIAÇÕES COMPLEMENTARES -->
+            <section class="form-section">
+                <h3>Avaliações Complementares</h3>
+                <p class="info-text">Se necessário, registre no campo Avaliação:</p>
+                
+                <div class="form-group">
+                    <textarea id="avaliacoes-complementares" name="avaliacoes-complementares" rows="4" placeholder="Registre as avaliações complementares..."></textarea>
+                </div>
+            </section>
+
+            <!-- SEÇÃO 10: PLANO INICIAL -->
+            <section class="form-section">
+                <h3>Plano Inicial</h3>
+                
+                <div class="form-group">
+                    <label>Status do Plano:</label>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="plano-status" value="inserido">
+                            Inserido
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="plano-status" value="nao-inserido">
+                            Não Inserido
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="plano-status" value="em-avaliacao">
+                            Em Avaliação
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="plano-descricao">Descrição do Plano:</label>
+                    <textarea id="plano-descricao" name="plano-descricao" rows="4" placeholder="Descreva o plano inicial..."></textarea>
+                </div>
+            </section>
+
+            <!-- BOTÕES DE AÇÃO -->
+            <section class="form-actions">
+                <button type="submit" class="btn btn-primary">Salvar Formulário</button>
+                <button type="reset" class="btn btn-secondary">Limpar Campos</button>
+                <button type="button" class="btn btn-tertiary" onclick="imprimirFormulario()">Imprimir</button>
+            </section>
+        </form>
+
+        <footer>
+            <p>&copy; 2026 cândidoferreira - CAPS III. Todos os direitos reservados.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
